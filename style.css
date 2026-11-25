@@ -1,0 +1,60 @@
+/* ===== Smile Dental Care Dental Clinic - Shared Stylesheet ===== */
+:root{--main:#0e7c86;--dark:#0a4f56;--light:#e8f6f7;--accent:#ff8a4c;--text:#2b3a3d;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Segoe UI,Arial,sans-serif;color:var(--text);line-height:1.6;background:#fff;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+
+/* Header and navigation */
+header{background:var(--main);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+.nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.logo{font-size:1.6rem;font-weight:bold;}
+.nav ul{display:flex;gap:6px;flex-wrap:wrap;}
+.nav ul a{padding:8px 16px;border-radius:20px;transition:.3s;}
+.nav ul a:hover,.nav ul a.active{background:#fff;color:var(--main);}
+
+/* Hero */
+.hero{background:linear-gradient(rgba(10,79,86,.85),rgba(14,124,134,.85)),var(--main);color:#fff;text-align:center;padding:90px 20px;}
+.hero h1{font-size:2.8rem;margin-bottom:12px;}
+.hero p{max-width:620px;margin:0 auto 25px;font-size:1.15rem;}
+.page-title{background:var(--light);text-align:center;padding:45px 20px;}
+.page-title h1{color:var(--dark);}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 28px;border-radius:30px;font-weight:bold;border:none;font-size:1rem;cursor:pointer;transition:.3s;}
+.btn:hover{background:#e6702f;transform:translateY(-2px);}
+
+/* Sections and cards */
+section{max-width:1100px;margin:auto;padding:55px 20px;}
+h2{color:var(--dark);text-align:center;margin-bottom:30px;font-size:2rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;}
+.card{background:var(--light);padding:28px 20px;border-radius:12px;text-align:center;border-bottom:4px solid var(--main);transition:.3s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 8px 18px rgba(0,0,0,.15);}
+.card .icon{font-size:2.6rem;}
+.card h3{color:var(--dark);margin:10px 0 6px;}
+.band{background:var(--main);color:#fff;max-width:none;}
+.band .grid{max-width:1100px;margin:auto;text-align:center;}
+.band strong{font-size:2.2rem;display:block;}
+.two-col{display:flex;gap:35px;align-items:center;flex-wrap:wrap;}
+.two-col>div{flex:1;min-width:260px;}
+.box{background:var(--light);padding:30px;border-radius:12px;font-size:1.1rem;}
+.checklist li::before{content:"✔ ";color:var(--main);font-weight:bold;}
+.checklist li{margin:8px 0;}
+.quote{background:var(--light);padding:22px;border-left:5px solid var(--accent);border-radius:8px;}
+
+/* Table */
+table{width:100%;border-collapse:collapse;margin-top:10px;}
+th,td{padding:12px;border:1px solid #cfe3e5;text-align:left;}
+th{background:var(--main);color:#fff;}
+tr:nth-child(even){background:var(--light);}
+
+/* Form */
+form{max-width:600px;margin:auto;background:var(--light);padding:30px;border-radius:12px;}
+label{display:block;margin:12px 0 4px;font-weight:bold;}
+input,select,textarea{width:100%;padding:10px;border:1px solid #9bc7cb;border-radius:6px;font-size:1rem;font-family:inherit;}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--main);}
+form .btn{margin-top:18px;}
+
+/* Footer */
+footer{background:var(--dark);color:#cfe8ea;text-align:center;padding:25px 20px;}
+footer p{margin:4px 0;}
+
+@media(max-width:600px){.hero h1{font-size:2rem;}.nav{justify-content:center;}}

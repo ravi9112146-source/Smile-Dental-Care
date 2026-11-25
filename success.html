@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Successful | Smile Dental Care</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f7fa, #f4faff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .success-card {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+            animation: appear 0.7s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .check {
+            width: 85px;
+            height: 85px;
+            background: #d4f8df;
+            color: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin: 0 auto 25px;
+            animation: pop 0.5s ease;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
+
+            80% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #123b55;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .details {
+            background: #f3f9fc;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .details p {
+            margin: 12px 0;
+            color: #444;
+        }
+
+        .details strong {
+            color: #123b55;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        .btn {
+            display: block;
+            padding: 13px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        .home {
+            background: #087eaa;
+            color: white;
+        }
+
+        .again {
+            border: 2px solid #087eaa;
+            color: #087eaa;
+        }
+
+        .brand {
+            color: #087eaa;
+            font-weight: bold;
+            margin-bottom: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="success-card">
+
+        <div class="brand">🦷 Smile Dental Care</div>
+
+        <div class="check">✓</div>
+
+        <h1>Thank You!</h1>
+
+        <p class="subtitle">
+            Your appointment request has been submitted successfully!
+            We appreciate your trust in Smile Dental Care.
+        </p>
+
+        <div class="details">
+            <p><strong>Patient Name:</strong> <span id="patientName"></span></p>
+            <p><strong>Phone:</strong> <span id="patientPhone"></span></p>
+            <p><strong>Service:</strong> <span id="patientService"></span></p>
+            <p><strong>Preferred Date:</strong> <span id="patientDate"></span></p>
+        </div>
+
+        <p class="note">
+            Our clinic team will contact you to confirm your appointment.
+            This is a frontend demonstration; no booking has been sent to the clinic.
+        </p>
+
+        <a href="index.html" class="btn home">Back to Home</a>
+
+        <a href="contact.html" class="btn again" onclick="sessionStorage.removeItem('appointment')">
+            Book Another Appointment
+        </a>
+
+    </div>
+
+    <script>
+        const appointment = JSON.parse(
+            sessionStorage.getItem("appointment") || "null"
+        );
+
+        if (!appointment) {
+            window.location.href = "contact.html";
+        } else {
+            document.getElementById("patientName").textContent = appointment.name;
+            document.getElementById("patientPhone").textContent = appointment.phone;
+            document.getElementById("patientService").textContent = appointment.service;
+            document.getElementById("patientDate").textContent =
+                appointment.date || "Not selected";
+        }
+    </script>
+
+</body>
+
+</html>
